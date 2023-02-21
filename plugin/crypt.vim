@@ -60,6 +60,10 @@ nnoremap <silent> <plug>(crypt-vault-search)    :CryptVaultSearch<cr>
 nnoremap <silent> <plug>(crypt-vault-files)     :CryptVaultFiles<cr>
 
 " Apply default mappings
+g:wiki_mappings_use_defaults = "all"
+if !exists('g:wiki_mappings_use_defaults')
+    let g:wiki_mappings_use_defaults = "all"
+endif
 let s:mappings = index(['all', 'global'], g:wiki_mappings_use_defaults) >= 0
       \ ? {
       \ '<plug>(crypt-vault-new)' : '<leader>jn',
